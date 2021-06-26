@@ -4,12 +4,12 @@ using rest_api_template.Domain.Entities;
 
 namespace rest_api_template.Infra.CrossCutting.Interfaces
 {
-    public interface IEntityMapper<TEntity> where  TEntity : class
+    public interface IEntityMapper<TEntity, TEntityDTO> where  TEntity : class
     {
-        TEntity ToEntity(TEntity entityDTO);
-        TEntity ToDTO(TEntity entity);
-        IEnumerable<TEntity> ToDTOList(IEnumerable<TEntity> entities);
-        IEnumerable<TEntity> ToEntityList(IEnumerable<TEntity> entityDTOs);
+        TEntity ToEntity(TEntityDTO entityDTO);
+        TEntityDTO ToDTO(TEntity entity);
+        IEnumerable<TEntityDTO> ToDTOList(IEnumerable<TEntity> entities);
+        IEnumerable<TEntity> ToEntityList(IEnumerable<TEntityDTO> entityDTOs);
 
     }
 }
