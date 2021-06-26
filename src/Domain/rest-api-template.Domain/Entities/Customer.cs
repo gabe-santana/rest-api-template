@@ -2,7 +2,7 @@ using System;
 
 namespace rest_api_template.Domain.Entities
 {
-    public class Customer
+    public class Customer : Entity
     {
         public string Name { get; set; }
         public string Email { get; set; }
