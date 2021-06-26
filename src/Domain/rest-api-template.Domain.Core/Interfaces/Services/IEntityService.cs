@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace rest_api_template.Domain.Core.Interfaces.Services
 {
-    public interface IServiceBase<TEntity> where TEntity : class
+    public interface IEntityService<TEntity> where TEntity : class
     {
          TEntity Get(int id);
          IEnumerable<TEntity> GetAll();
