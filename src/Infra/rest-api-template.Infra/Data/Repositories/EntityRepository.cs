@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using rest_api_template.Infra.Data;
+using rest_api_template.Domain.Core.Interfaces.Repositories;
+
 
 namespace rest_api_template.Domain.Core.Interfaces.Repositories
 {

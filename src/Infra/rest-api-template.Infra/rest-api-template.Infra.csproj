@@ -11,6 +11,7 @@
 
    <ItemGroup>
          <ProjectReference Include = "..\..\Domain\rest-api-template.Domain\rest-api-template.Domain.csproj" />
+         <ProjectReference Include = "..\..\Domain\rest-api-template.Domain.Core\rest-api-template.Domain.Core.csproj" />
     </ItemGroup>
 
 </Project>
