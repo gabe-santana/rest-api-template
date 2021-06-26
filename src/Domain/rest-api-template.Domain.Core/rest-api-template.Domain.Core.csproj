@@ -5,4 +5,12 @@
     <RootNamespace>rest_api_template.Domain.Core</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+        <ProjectReference Include = "..\rest-api-template.Domain\rest-api-template.Domain.csproj" />
+        <ProjectReference Include = "..\..\Infra\rest-api-template.Infra\rest-api-template.Infra.csproj" />
+  </ItemGroup>
 </Project>
