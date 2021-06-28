@@ -17,32 +17,21 @@ namespace rest_api_template.Application
             this.CustomerService = CustomerService;
         }
         public CustomerDTO Get(int id)
-        {
-            return CustomerMapper.ToDTO(CustomerService.Get(id));
-        }
+            => CustomerMapper.ToDTO(CustomerService.Get(id));
 
         public IEnumerable<CustomerDTO> GetAll()
-        {
-            return CustomerMapper.ToDTOList(CustomerService.GetAll());
-        }
+            => CustomerMapper.ToDTOList(CustomerService.GetAll());
         
         public void Add(CustomerDTO customerDTO)
-        {
-            CustomerService
+            => CustomerService
                 .Add(CustomerMapper.ToEntity(customerDTO));
-        }
+
 
         public void Update(CustomerDTO customerDTO)
-        {
-            CustomerService
+            => CustomerService
                 .Update(CustomerMapper.ToEntity(customerDTO));
-        }
         public void Delete(CustomerDTO customerDTO)
-        {
-            CustomerService
+            => CustomerService
                 .Delete(CustomerMapper.ToEntity(customerDTO));
-        }
-
-
     }
 }
