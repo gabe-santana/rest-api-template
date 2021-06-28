@@ -13,6 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using rest_api_template.Infra.CrossCutting.IOC;
+using rest_api_template.Infra.Data;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 namespace rest_api_template.API
 {
@@ -28,7 +31,10 @@ namespace rest_api_template.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<Database>(o => {
+                o.UseSqlServer(Configuration.GetConnectionString("SqlConnectionString"));
+            });
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -38,7 +44,7 @@ namespace rest_api_template.API
 
         public void ConfigureContainer(ContainerBuilder builder)
             => builder.RegisterModule(new ModuleIOC());
-            
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
