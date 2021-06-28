@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using rest_api_template.Infra.CrossCutting.IOC;
 
 namespace rest_api_template.API
 {
@@ -34,6 +36,9 @@ namespace rest_api_template.API
             });
         }
 
+        public void ConfigureContainer(ContainerBuilder builder)
+            => builder.RegisterModule(new ModuleIOC());
+            
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
