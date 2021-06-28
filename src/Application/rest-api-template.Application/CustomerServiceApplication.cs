@@ -2,37 +2,47 @@ using System.Collections.Generic;
 using rest_api_template.Application.DTO;
 using rest_api_template.Application.Interfaces;
 using rest_api_template.Application.Mappers.Mapper;
+using rest_api_template.Domain.Core.Interfaces.Services;
 
 namespace rest_api_template.Application
 {
     public class CustomerServiceApplication : ICustomerServiceApplication
     {
-        private readonly ICustomerServiceApplication CustomerService;
         private readonly CustomerMapper  CustomerMapper;
-        
-        public void Add(CustomerDTO customerDTO)
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly ICustomerService CustomerService;
 
-        public void Delete(CustomerDTO customerDTO)
+        public CustomerServiceApplication(CustomerMapper  CustomerMapper, ICustomerService CustomerService)
         {
-            throw new System.NotImplementedException();
+            this.CustomerMapper = CustomerMapper;
+            this.CustomerService = CustomerService;
         }
-
         public CustomerDTO Get(int id)
         {
-            throw new System.NotImplementedException();
+            return CustomerMapper.ToDTO(CustomerService.Get(id));
         }
 
         public IEnumerable<CustomerDTO> GetAll()
         {
-            throw new System.NotImplementedException();
+            return CustomerMapper.ToDTOList(CustomerService.GetAll());
+        }
+        
+        public void Add(CustomerDTO customerDTO)
+        {
+            CustomerService
+                .Add(CustomerMapper.ToEntity(customerDTO));
         }
 
         public void Update(CustomerDTO customerDTO)
         {
-            throw new System.NotImplementedException();
+            CustomerService
+                .Update(CustomerMapper.ToEntity(customerDTO));
         }
+        public void Delete(CustomerDTO customerDTO)
+        {
+            CustomerService
+                .Delete(CustomerMapper.ToEntity(customerDTO));
+        }
+
+
     }
 }
