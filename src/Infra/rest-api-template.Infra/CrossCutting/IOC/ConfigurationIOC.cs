@@ -23,7 +23,7 @@ namespace rest_api_template.Infra.CrossCutting.IOC
             builder.RegisterType<ProductService>().As<IProductService>();
 
             builder.RegisterType<CustomerRepository>().As<ICustomerRepository>();
-            builder.RegisterType<ProductRepository>().As<ICustomerRepository>();
+            builder.RegisterType<ProductRepository>().As<IProductRepository>();
         
             builder.RegisterType<CustomerMapper>().As<IEntityMapper<Customer, CustomerDTO>>();
             builder.RegisterType<ProductMapper>().As<IEntityMapper<Product, ProductDTO>>();
