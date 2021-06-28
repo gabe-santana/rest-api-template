@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using rest_api_template.Application.DTO;
 using rest_api_template.Domain.Entities;
 
-namespace rest_api_template.Infra.CrossCutting.Interfaces
+namespace rest_api_template.Application.Mappers.Interfaces
 {
     public interface IEntityMapper<TEntity, TEntityDTO> where  TEntity : class
     {

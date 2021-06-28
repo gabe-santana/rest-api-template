@@ -9,11 +9,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
   </ItemGroup>
 
-   <ItemGroup>
-         <ProjectReference Include = "..\..\Domain\rest-api-template.Domain\rest-api-template.Domain.csproj" />
-         <ProjectReference Include = "..\..\Domain\rest-api-template.Domain.Core\rest-api-template.Domain.Core.csproj" />
-         <ProjectReference Include = "..\..\Application\rest-api-template.Application\rest-api-template.Application.csproj" />
-
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include = "..\..\Domain\rest-api-template.Domain\rest-api-template.Domain.csproj" />
+    <ProjectReference Include = "..\..\Domain\rest-api-template.Domain.Core\rest-api-template.Domain.Core.csproj" />
+    <ProjectReference Include = "..\..\Application\rest-api-template.Application\rest-api-template.Application.csproj" />
+  </ItemGroup>
 
 </Project>

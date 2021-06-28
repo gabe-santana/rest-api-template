@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using rest_api_template.Application.DTO;
+using rest_api_template.Application.Mappers.Interfaces;
 using rest_api_template.Domain.Entities;
-using rest_api_template.Infra.CrossCutting.Interfaces;
 
-namespace rest_api_template.Infra.CrossCutting.Mapper
+namespace rest_api_template.Application.Mappers.Mapper
 {
     public class CustomerMapper : IEntityMapper<Customer, CustomerDTO>
     {
